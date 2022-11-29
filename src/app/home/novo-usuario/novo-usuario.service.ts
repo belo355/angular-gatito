@@ -13,3 +13,4 @@ export class NovoUsuarioService {
     return this.http.post('http://localhost:3000/user/sigup', novoUsuario);
   }
 }
+''
