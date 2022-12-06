@@ -4,30 +4,40 @@
   <div class="form-group">
     <input placeholder="e-mail" class="form-control" formControlName="email" />
     <app-mensagem
-      *ngIf="novoUsuarioForm.get('email')?.errors && novoUsuarioForm.get('email')?.touched"
-      mensagem="Email obrigatorio ou incorreto">
+    *ngIf="novoUsuarioForm.get('email')?.errors && novoUsuarioForm.get('email')?.touched" mensagem="Email obrigatorio ou incorreto">
     </app-mensagem>
   </div>
+
   <div class="form-group">
     <input placeholder="Nome Completo" class="form-control" formControlName="fullName" />
     <app-mensagem
-      *ngIf="novoUsuarioForm.get('fullName')?.errors && novoUsuarioForm.get('fullName')?.touched"
-      mensagem="Nome obrigatório ou incorreto"s>
+      *ngIf="novoUsuarioForm.get('fullName')?.errors && novoUsuarioForm.get('fullName')?.touched" mensagem="Nome obrigatório ou incorreto">
     </app-mensagem>
   </div>
+
   <div class="form-group">
     <input type="text" placeholder="Usuário" class="form-control" formControlName="userName" />
     <app-mensagem
-      *ngIf="novoUsuarioForm.get('userName')?.errors && novoUsuarioForm.get('userName')?.touched"
-      mensagem="Usuario obrigatório"s>
-  </app-mensagem>
+      *ngIf="novoUsuarioForm.get('userName')?.errors && novoUsuarioForm.get('userName')?.touched" mensagem="Usuario obrigatório">
+    </app-mensagem>
+    <!-- <app-mensagem
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.usuarioExistente"
+      mensagem="Usuário já existe">
+    </app-mensagem> -->
   </div>
+
   <div class="form-group">
     <input type="password" placeholder="Senha" class="form-control" formControlName="password" />
     <app-mensagem
       *ngIf="novoUsuarioForm.get('password')?.errors && novoUsuarioForm.get('password')?.touched"
-      mensagem="password obrigatório"s>
-</app-mensagem>
+      mensagem="password obrigatório">
+    </app-mensagem>
+    <app-mensagem
+      *ngIf="novoUsuarioForm.errors"
+      mensagem="senha deve ser diferente do usuario">
+      <!-- aplicar validators
+       *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario" "-->
+    </app-mensagem>
   </div>
 
   <button class="tn btn-primary btn-block">Cadastro</button>
